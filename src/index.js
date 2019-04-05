@@ -109,7 +109,7 @@ module.exports = class Umzug extends EventEmitter {
           .tap((executed) => {
             if (!executed || (options.method === 'down')) {
               const fun = (migration[options.method] || Bluebird.resolve);
-              let params = options.migrations.params;
+              let params = options.params;
               if (typeof params === 'undefined') {
                 params = self.options.migrations.params;
               }
